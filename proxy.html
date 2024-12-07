@@ -1,1 +1,112 @@
-<h2>down rn, will be up soon</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General styling for body */
+        body {
+            margin: 0;
+            font-family: 'DM Sans', sans-serif;
+            background-color: #282c34;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            flex-direction: column;
+        }
+
+        /* Button styling */
+        .open-btn {
+            background-color: #ff5722;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            font-weight: 700;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            margin: 10px;
+        }
+
+        .open-btn:hover {
+            transform: scale(1.1);
+            background-color: #e64a19;
+        }
+
+        /* Title text */
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        /* Animation for button hover */
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Title above the buttons -->
+    <h1>Proxies</h1>
+    <h6>i'll fix this soon again, i'm revamping 😔</h6>
+
+    <!-- Multiple buttons, each with different link -->
+    <button class="open-btn" onclick="openIframePage('https://example.com')">test ghub 2.0</button>
+    <button class="open-btn" onclick="openIframePage('https://example2.com')">test ghub 2.0</button>
+    <button class="open-btn" onclick="openIframePage('https://example3.com')">test ghub 2.0</button>
+
+    <script>
+        function openIframePage(url) {
+            // Open a new blank window
+            const newWindow = window.open('about:blank', '_blank');
+
+            // Write HTML structure to the new window
+            newWindow.document.write(`
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Iframe Display</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            padding: 0;
+                            overflow: hidden;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: #282c34;
+                        }
+                        iframe {
+                            width: 100vw;
+                            height: 100vh;
+                            border: none;
+                            background-color: #fff;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <iframe src="${url}"></iframe>
+                </body>
+                </html>
+            `);
+
+            // Close the document.write() mode, so no more writes can happen
+            newWindow.document.close();
+        }
+    </script>
+
+</body>
+</html>
